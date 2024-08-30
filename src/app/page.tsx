@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <Header
-        onLogoClick={scrollToChooseName}
+        onLogoClick={scrollToFirstScreen}
         cartBlock={
           <Button onClick={scrollToChooseName} variant="primary">
             Get VPN
@@ -31,10 +31,10 @@ export default function Home() {
         }
       />
       <main className="container mx-auto mt-40">
-        <div>
-          <SectionText className="flex-col">
+        <div ref={firstScreenRef}>
+          <SectionText className="flex-col gap-8">
             <>
-              <h2 className="font-bold text-3xl leading-10">
+              <h2 className="font-bold text-3xl leading-10 w-1/4 text-center mx-auto">
                 Access{" "}
                 <span className="text-[#3177F2]">everything securely </span>
                 with VPN

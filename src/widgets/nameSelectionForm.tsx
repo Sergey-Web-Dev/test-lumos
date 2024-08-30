@@ -2,6 +2,7 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent, FC } from "react";
 import axios from "axios";
 import Button from "@/shared/ui/button";
+import ModalBlock from "./modal";
 
 interface UserName {
   first: string;
@@ -88,9 +89,8 @@ const NameSelectionForm: FC = () => {
             </label>
           ))}
         </div>
-        <Button variant="secondary" className="font-bold text-2xl">
-          Get VPN
-        </Button>
+
+        <ModalBlock name={selectedName} />
       </form>
     </section>
   );
