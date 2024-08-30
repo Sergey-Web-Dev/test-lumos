@@ -18,7 +18,7 @@ const BlockIterable = ({
     <div
       className={clsx(
         classname,
-        "text-center w-[45%] flex flex-col justify-center items-center px-12 border-b-2 p-8 border-[#646464] gap-2"
+        "text-center mb:w-full w-[45%] flex flex-col justify-center items-center px-12 border-b-2 p-8 border-[#646464] gap-2"
       )}
     >
       <img src={`${ico}`} alt={`${ico}`} />

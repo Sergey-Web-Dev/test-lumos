@@ -34,7 +34,7 @@ export default function Home() {
         <div ref={firstScreenRef}>
           <SectionText className="flex-col gap-8">
             <>
-              <h2 className="font-bold text-3xl leading-10 w-1/4 text-center mx-auto">
+              <h2 className="font-bold text-3xl leading-10 mb:w-auto w-1/4 text-center mx-auto">
                 Access{" "}
                 <span className="text-[#3177F2]">everything securely </span>
                 with VPN
@@ -43,7 +43,7 @@ export default function Home() {
               <Button
                 onClick={scrollToChooseName}
                 variant="secondary"
-                className="font-bold text-2xl"
+                className="font-bold text-2xl mb:w-full mb:px-0"
               >
                 Get VPN
               </Button>
@@ -78,7 +78,7 @@ export default function Home() {
             Millions of people trust us!
           </h4>
         </section>
-        <div ref={chooseNameRef} className=""></div>
+        <div ref={chooseNameRef}></div>
         <NameSelectionForm />
       </main>
     </>

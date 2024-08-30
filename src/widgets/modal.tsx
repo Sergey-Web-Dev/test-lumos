@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import * as yup from "yup";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -12,7 +11,6 @@ import {
 } from "@/components/ui/alert-dialog";
 import Button from "@/shared/ui/button";
 
-// Define the validation schema
 const emailSchema = yup.object().shape({
   email: yup
     .string()
@@ -34,21 +32,15 @@ const MyAlertDialog: React.FC<MyAlertDialogProps> = ({ name }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newEmail = e.target.value;
     setEmail(newEmail);
-    console.log(newEmail); // Log the email on every input change
+    console.log(newEmail);
   };
 
   const handleSubmit = async () => {
     try {
-      // Validate email
       await emailSchema.validate({ email });
-
-      // If validation passes, log the email
       console.log(email);
-
-      // Close the modal
       handleClose();
     } catch (err: any) {
-      // If validation fails, show the error
       setError(err.message);
     }
   };
@@ -56,13 +48,13 @@ const MyAlertDialog: React.FC<MyAlertDialogProps> = ({ name }) => {
   return (
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger
-        className="py-6 text-white bg-[#FF5D17] px-32  rounded-xl hover:bg-rose-600 disabled:opacity-50 shadow shadow-rose-500/30 font-bold text-2xl"
+        className="w-full py-4 text-white bg-[#FF5D17] px-8 rounded-xl hover:bg-rose-600 disabled:opacity-50 shadow shadow-rose-500/30 font-bold text-lg sm:text-2xl"
         onClick={() => setIsOpen(true)}
       >
         Get VPN
       </AlertDialogTrigger>
 
-      <AlertDialogContent className="max-w-[60%] mx-auto p-6 rounded-xl shadow-lg ">
+      <AlertDialogContent className="w-full max-w-[95%] sm:max-w-[75%] md:max-w-[60%] mx-auto p-4 sm:p-6 rounded-xl shadow-lg ">
         <button
           onClick={handleClose}
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 font-bold text-2xl"
@@ -70,15 +62,15 @@ const MyAlertDialog: React.FC<MyAlertDialogProps> = ({ name }) => {
           &times;
         </button>
 
-        <AlertDialogHeader className="flex flex-col gap-6">
-          <AlertDialogTitle className="uppercase font-bold text-3xl">
+        <AlertDialogHeader className="flex flex-col gap-4 sm:gap-6">
+          <AlertDialogTitle className="uppercase font-bold text-xl sm:text-3xl">
             Your Name
           </AlertDialogTitle>
-          <h2 className="font-medium">{name}</h2>
+          <h2 className="font-medium text-lg sm:text-xl">{name}</h2>
           <input
             type="text"
             placeholder="Enter your email"
-            className="bg-[#F8F8F8] p-6 border-2 border-[#646464] rounded-3xl w-full"
+            className="bg-[#F8F8F8] p-4 sm:p-6 border-2 border-[#646464] rounded-3xl w-full"
             value={email}
             onChange={handleInputChange}
           />
@@ -98,7 +90,7 @@ const MyAlertDialog: React.FC<MyAlertDialogProps> = ({ name }) => {
         <AlertDialogFooter>
           <Button
             variant="secondary"
-            className="w-full  mt-4  font-bold text-2xl"
+            className="w-full mt-4 py-4 sm:py-6 font-bold text-lg sm:text-2xl"
             onClick={handleSubmit}
           >
             Continue

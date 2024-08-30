@@ -49,7 +49,7 @@ const NameSelectionForm: FC = () => {
   };
 
   return (
-    <section className="px-16 mx-auto flex flex-col items-start justify-center gap-6 my-12">
+    <section className="mb:px-0 px-16 mx-auto flex flex-col items-start justify-center gap-6 my-12">
       <h2 className="text-3xl uppercase font-bold ">
         Choose <span className="text-[#3177F2]">Your Name</span>
       </h2>

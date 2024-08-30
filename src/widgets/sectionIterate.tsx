@@ -8,12 +8,12 @@ const SectionIterate = ({ className }: { className?: string }) => {
     <section
       className={clsx(
         className,
-        "flex justify-center flex-wrap items-stretch gap-6 my-12"
+        "flex justify-center flex-wrap items-stretch mb:gap-0 gap-6 my-12"
       )}
     >
       {dataBlock.map((el) => (
         <BlockIterable
-          classname={clsx(el.id <= 2 ? "border-t-2" : "")}
+          classname={clsx(el.id <= 2 ? "border-t-2 mb:border-t-0" : "")}
           key={el.id}
           {...el}
         />
